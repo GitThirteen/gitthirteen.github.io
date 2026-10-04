@@ -3,18 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GitThirteen</title>
+  <title>Personal Page | Michael Eickmeyer</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <script src="assets/js/main.js" defer></script>
 </head>
 
-<!-- Random stuff for now, will change later -->
-<body style="font-family: system-ui, sans-serif; max-width: 600px; margin: 4rem auto; padding: 0 1rem; line-height: 1.6;">
-  <h1>GitThirteen</h1>
-  <p>Computer Graphics, Path Tracing & Visualization Research.</p>
-  
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="/lightcraft/">Lightcraft</a></li>
-    <li><a href="/visualizations/">Visualizations</a></li>
-  </ul>
+<body>
+  <header>
+    <nav class="jumpers" aria-label="On this page">
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+    </nav>
+    <nav class="redirects" aria-label="Redirects to other pages">
+      <a class="btn-vs" href="/visualizations/">Visualizations</a>
+      <a class="btn-lc" href="/lightcraft/">Lightcraft</a>
+      <div class="lang-picker">
+        <button 
+          type="button" 
+          class="lang-btn" 
+          aria-expanded="false" 
+          aria-haspopup="true" 
+          aria-label="Change language (Current: English)">
+          <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="flag-icon" alt="" aria-hidden="true">
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <ul class="lang-menu" role="list">
+          <li>
+            <a href="/en/" lang="en" hreflang="en" aria-current="true">
+              <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="flag-icon" alt="" aria-hidden="true"> English
+            </a>
+          </li>
+          <li>
+            <a href="/de/" lang="de" hreflang="de">
+              <img src="https://hatscripts.github.io/circle-flags/flags/de.svg" class="flag-icon" alt="" aria-hidden="true"> Deutsch
+            </a>
+          </li>
+          <li>
+            <a href="/es/" lang="es" hreflang="es">
+              <img src="https://hatscripts.github.io/circle-flags/flags/es.svg" class="flag-icon" alt="" aria-hidden="true"> Español
+            </a>
+          </li>
+          <li>
+            <a href="/ru/" lang="ru" hreflang="ru">
+              <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" class="flag-icon" alt="" aria-hidden="true"> Русский
+            </a>
+          </li>
+          <li>
+            <a href="/ja/" lang="ja" hreflang="ja">
+              <img src="https://hatscripts.github.io/circle-flags/flags/jp.svg" class="flag-icon" alt="" aria-hidden="true"> 日本語
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="about">
+      <div class="profile">
+        <div class="profile-left">
+          <img src="assets/img/other/profile.jpg" alt="Profile picture of Michael Eickmeyer" class="profile-img">
+          <div class="socials">
+            <a href="https://github.com/gitthirteen" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/icons/GitHub_Invertocat_White.svg" alt="GitHub logo" class="social-icon">
+            </a>
+            <a href="https://orcid.org/0009-0009-9193-5277" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/icons/ORCID_iD.svg" alt="ORCID logo" class="social-icon">
+            </a>
+            <a href="https://at.linkedin.com/in/michael-eickmeyer-0295633a9" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/icons/InBug-White.png" alt="LinkedIn logo" class="social-icon">
+            </a>
+            <a href="mailto:mich1.eickmeyer@gmail.com" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/icons/envelope-solid-full.svg" alt="Email logo" class="social-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-right">
+          <div class="profile-text">
+            <div class="name">
+              <h1>Michael Eickmeyer</h1><p class="edu-titles">B.Sc.</p>
+            </div>
+            <div class="bio-subtitle">
+              <p>Master's Student in Visual Computing @ TU Wien, Vienna</p>
+            </div>
+            <div class="divider"></div>
+
+            <div class="bio-text">
+              <p>Hello GitHub, Michael here.</p>
+              <ul>
+                <li>From 2022 - 2026, I assisted in the development of the DigiFit4All and Dev0land CS education projects at eduLAB @ TU Wien.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+    </div>
+
+    <div id="interests">
+      <h2>Research Interests</h2>
+      <div class="divider"></div>
+      <p>Monte-Carlo Rendering, Path Guiding, Real-time Rendering, Denoising, Data Structures, CS Education</p>
+    </div>
+
+    <div id="projects">
+      <h2>Projects</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div id="publications">
+      <h2>Publications</h2>
+      <div class="divider"></div>
+      <p>0 publications found.</p>
+    </div>
+
+    <div id="other">
+      <h2>Other Work</h2>
+      <div class="divider"></div>
+    </div>
+  </main>
+
+  <footer></footer>
 </body>
 </html>
