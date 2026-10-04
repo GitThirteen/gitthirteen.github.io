@@ -14,7 +14,7 @@ class Fetcher {
         this.githubToken = githubToken;
     }
 
-    async github() {
+    async githubData() {
         if (!this.githubUsername) return [];
 
         const headers = {
@@ -61,7 +61,7 @@ class Fetcher {
         return repos;
     }
 
-    async orcid() {
+    async orcidData() {
         if (!this.orcid) return [];
 
         const res = await fetch(`https://pub.orcid.org/v3.0/${this.orcid}/works`, {
@@ -122,10 +122,10 @@ class Fetcher {
         return verified.sort((a, b) => (b.year || 0) - (a.year || 0));
     }
 
-    async all() {
+    async allData() {
         const [publications, repositories] = await Promise.all([
-            this.orcid(),
-            this.github(),
+            this.orcidData(),
+            this.githubData(),
         ]);
 
         return {
@@ -146,7 +146,7 @@ class Fetcher {
             githubToken: process.env.GITHUB_TOKEN,
         });
 
-        const data = await fetcher.all();
+        const data = await fetcher.allData();
 
         await writeFile(CONFIG.outputPath, JSON.stringify(data, null, 2), 'utf-8');
         console.log(`Successfully wrote ${data.publications.length} publications and ${data.repositories.length} repos to ${CONFIG.outputPath}`);
