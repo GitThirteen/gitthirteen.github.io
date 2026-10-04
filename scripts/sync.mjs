@@ -1,10 +1,12 @@
-import { writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const CONFIG = {
     orcid: '0009-0009-9193-5277',
     githubUsername: process.env.GITHUB_REPOSITORY_OWNER || 'GitThirteen',
-    outputPath: path.resolve('./data.json'),
+    outputPath: path.resolve(__dirname, '../assets/json/data.json'),
 };
 
 class Fetcher {
@@ -148,6 +150,7 @@ class Fetcher {
 
         const data = await fetcher.allData();
 
+        await mkdir(path.dirname(CONFIG.outputPath), { recursive: true });
         await writeFile(CONFIG.outputPath, JSON.stringify(data, null, 2), 'utf-8');
         console.log(`Successfully wrote ${data.publications.length} publications and ${data.repositories.length} repos to ${CONFIG.outputPath}`);
     } catch (err) {

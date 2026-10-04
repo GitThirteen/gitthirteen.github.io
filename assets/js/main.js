@@ -122,7 +122,7 @@ const renderProjects = (repositories) => {
 }
 
 (async () => {
-    const res = await fetch('/assets/data/data.json');
+    const res = await fetch('./assets/json/data.json');
     const { lastUpdated, publications, repositories } = await res.json();
 
     console.log(`Last updated on: ${lastUpdated}`);
