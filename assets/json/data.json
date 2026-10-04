@@ -1,0 +1,218 @@
+{
+  "lastUpdated": "2026-10-04T11:02:48.669Z",
+  "publications": [
+    {
+      "id": 224904849,
+      "title": "Improving Algorithmic Understanding via Path-finding Algorithms in Unplugged/Plugged Hybrid Workshops",
+      "type": "conference-paper",
+      "year": 2026,
+      "doi": "10.1145/3801749.3801774",
+      "url": "https://doi.org/10.1145/3801749.3801774",
+      "source": "Crossref"
+    }
+  ],
+  "repositories": [
+    {
+      "id": 1401391274,
+      "name": "gitthirteen.github.io",
+      "description": "Personal landing page.",
+      "url": "https://github.com/GitThirteen/gitthirteen.github.io",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "updatedAt": "2026-10-04T11:02:29Z"
+    },
+    {
+      "id": 1401402321,
+      "name": "lightcraft",
+      "description": "A work-in-progress interactive textbook and lecture series exploring modern computer graphics.",
+      "url": "https://github.com/GitThirteen/lightcraft",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "Astro",
+      "topics": [],
+      "updatedAt": "2026-10-02T18:29:49Z"
+    },
+    {
+      "id": 1088135525,
+      "name": "obsidian",
+      "description": "Work-in-progress renderer.",
+      "url": "https://github.com/GitThirteen/obsidian",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "C++",
+      "topics": [
+        "computer-graphics",
+        "renderer",
+        "vulkan"
+      ],
+      "updatedAt": "2026-07-15T12:30:36Z"
+    },
+    {
+      "id": 1401377916,
+      "name": "visualizations",
+      "description": "Accumulator repository for all custom visualization projects.",
+      "url": "https://github.com/GitThirteen/visualizations",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "updatedAt": "2026-10-02T08:31:59Z"
+    },
+    {
+      "id": 1231269796,
+      "name": "saucebottle",
+      "description": "A saucy background daemon for automating your anime artwork collection.",
+      "url": "https://github.com/GitThirteen/saucebottle",
+      "homepage": null,
+      "stars": 0,
+      "forks": 1,
+      "language": "Vue",
+      "topics": [
+        "anime",
+        "batch-downloader",
+        "booru",
+        "file-manager",
+        "image-sorter",
+        "iqdb",
+        "rust",
+        "tauri",
+        "typescript",
+        "vue"
+      ],
+      "updatedAt": "2026-05-12T23:02:11Z"
+    },
+    {
+      "id": 1127501655,
+      "name": "vis-magnus-2018",
+      "description": "Reimplementation of the Magnus 2018 paper \"Interactive Dynamic Volume Illumination with Refraction and Caustics\"",
+      "url": "https://github.com/GitThirteen/vis-magnus-2018",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "C++",
+      "topics": [
+        "tuwien",
+        "visualization",
+        "volume-rendering"
+      ],
+      "updatedAt": "2026-01-10T11:48:07Z"
+    },
+    {
+      "id": 1109812297,
+      "name": "no-pressure",
+      "description": "Fun little VR game in which you either solve tasks with your friend or you all die a painful death :>",
+      "url": "https://github.com/GitThirteen/no-pressure",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "topics": [
+        "unreal-engine-5",
+        "vr"
+      ],
+      "updatedAt": "2025-12-15T00:05:10Z"
+    },
+    {
+      "id": 903191110,
+      "name": "cogwheel",
+      "description": "Machine learning algorithms",
+      "url": "https://github.com/GitThirteen/cogwheel",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "Rust",
+      "topics": [],
+      "updatedAt": "2024-12-17T13:10:56Z"
+    },
+    {
+      "id": 464444685,
+      "name": "compvis-tasks",
+      "description": "Basic implementations of angle finding, template matching and SIFT",
+      "url": "https://github.com/GitThirteen/compvis-tasks",
+      "homepage": null,
+      "stars": 1,
+      "forks": 0,
+      "language": "Python",
+      "topics": [
+        "computer-vision",
+        "image-processing",
+        "python"
+      ],
+      "updatedAt": "2023-10-31T15:54:56Z"
+    },
+    {
+      "id": 612757547,
+      "name": "booruloader",
+      "description": "A (not so) small JS script for batch-downloading images from Booru services.",
+      "url": "https://github.com/GitThirteen/booruloader",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [
+        "booru",
+        "danbooru",
+        "downloader",
+        "gelbooru",
+        "javascript",
+        "js",
+        "script"
+      ],
+      "updatedAt": "2023-03-13T10:36:11Z"
+    },
+    {
+      "id": 609208889,
+      "name": "in-the-dark",
+      "description": "Rescue your prince as a knightess in this 3D dungeon puzzle game! 🎮 ",
+      "url": "https://github.com/GitThirteen/in-the-dark",
+      "homepage": null,
+      "stars": 1,
+      "forks": 0,
+      "language": "C++",
+      "topics": [
+        "3d-game",
+        "cpp17",
+        "opengl"
+      ],
+      "updatedAt": "2024-09-18T14:21:29Z"
+    },
+    {
+      "id": 360690857,
+      "name": "sandbox",
+      "description": "A repository containing most if not all my small fun projects.",
+      "url": "https://github.com/GitThirteen/sandbox",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [
+        "java",
+        "small-projects",
+        "typescript"
+      ],
+      "updatedAt": "2022-01-28T18:56:35Z"
+    },
+    {
+      "id": 303959556,
+      "name": "recrea-text",
+      "description": "An application segmenting long objects out of an image and creating a new one through the power of magic and tears.",
+      "url": "https://github.com/GitThirteen/recrea-text",
+      "homepage": null,
+      "stars": 1,
+      "forks": 0,
+      "language": "MATLAB",
+      "topics": [
+        "image-processing",
+        "image-segmentation",
+        "matlab"
+      ],
+      "updatedAt": "2021-01-07T21:27:11Z"
+    }
+  ]
+}
