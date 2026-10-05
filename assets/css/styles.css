@@ -8,7 +8,7 @@ html {
 }
 
 html::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 h1, h2, p {
@@ -17,9 +17,9 @@ h1, h2, p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -30,57 +30,57 @@ body {
 }
 
 .scrollbar {
-  position: fixed;
-  top: 2rem;
-  bottom: 2rem;
-  right: 1.5rem;
-  width: 24px;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  user-select: none;
-  opacity: 1;
-  transition: opacity 0.25s ease;
+    position: fixed;
+    top: 2rem;
+    bottom: 2rem;
+    right: 1.5rem;
+    width: 24px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    opacity: 1;
+    transition: opacity 0.25s ease;
 }
 
 .scrollbar.is-hidden {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .scroll-track {
-  position: relative;
-  width: 2px;
-  height: 100%;
-  background: rgba(255, 59, 48, 0.35);
-  border-radius: 2px;
+    position: relative;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 59, 48, 0.35);
+    border-radius: 2px;
 }
 
 .scroll-thumb {
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background-color: #ff3b30;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(255, 59, 48, 0.8);
-  pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ff3b30;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 59, 48, 0.8);
+    pointer-events: none;
 }
 
 .scroll-percent {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #ff3b30;
-  white-space: nowrap;
-  pointer-events: none;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ff3b30;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 main {
