@@ -1,3 +1,8 @@
+const blacklist = {
+    'projects': ['gitthirteen.github.io', 'lightcraft', 'visualizations'],
+    'publications': []
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.querySelector('.lang-btn');
     const langPicker = document.querySelector('.lang-picker');
@@ -38,51 +43,54 @@ const renderPublications = (publications) => {
     const placeholder = section.querySelector('p');
     if (placeholder) placeholder.remove();
 
+    section.insertAdjacentHTML('beforeend', `<p>${publications.length} publication${publications.length === 1 ? '' : 's'} found.</p>`);
+
     if (publications.length === 0) {
-        section.insertAdjacentHTML('beforeend', '<p>0 publications found.</p>');
         return;
     }
 
     const container = document.createElement('div');
     container.className = 'publications-list';
 
-    publications.forEach((pub) => {
-        const item = document.createElement('a');
-        item.className = 'publication-card';
-        item.href = pub.url || (pub.doi ? `https://doi.org/${pub.doi}` : '#');
-        item.target = '_blank';
-        item.rel = 'noopener noreferrer';
+    publications
+        .filter((pub) => !blacklist.publications?.includes(pub.doi))
+        .forEach((pub) => {
+            const item = document.createElement('a');
+            item.className = 'publication-card';
+            item.href = pub.url || (pub.doi ? `https://doi.org/${pub.doi}` : '#');
+            item.target = '_blank';
+            item.rel = 'noopener noreferrer';
 
-        const authorsText = Array.isArray(pub.authors)
-            ? pub.authors.join(', ')
-            : (pub.authors || 'Michael Eickmeyer');
+            const authorsText = Array.isArray(pub.authors)
+                ? pub.authors.join(', ')
+                : (pub.authors || 'Michael Eickmeyer');
 
-        const dateText = pub.publicationDate || pub.year || 'Unknown date';
+            const dateText = pub.publicationDate || pub.year || 'Unknown date';
 
-        const imageFilename = pub.image || (pub.doi ? getDoiImageFilename(pub.doi) : `${pub.id}.png`);
-        const imgSrc = `assets/img/papers/${imageFilename}`;
-    
-        item.innerHTML = `
-            <div class="publication-thumb">
-                <img 
-                src="${imgSrc}" 
-                alt="Teaser image for ${pub.title}" 
-                loading="lazy"
-                onerror="this.onerror=null; this.src='assets/img/other/profile.jpg';"
-                >
-            </div>
-            <div class="publication-content">
-                <h3 class="publication-title">${pub.title}</h3>
-                <p class="publication-authors">${authorsText}</p>
-                <div class="publication-meta">
-                <span class="publication-date">${dateText}</span>
-                ${pub.type ? `<span class="publication-badge">${pub.type.replace('-', ' ')}</span>` : ''}
+            const imageFilename = pub.image || (pub.doi ? getDoiImageFilename(pub.doi) : `${pub.id}.png`);
+            const imgSrc = `assets/img/papers/${imageFilename}`;
+        
+            item.innerHTML = `
+                <div class="publication-thumb">
+                    <img 
+                        src="${imgSrc}" 
+                        alt="Teaser image for ${pub.title}" 
+                        loading="lazy"
+                        onerror="this.onerror=null; this.src='assets/img/other/profile.jpg';"
+                    >
                 </div>
-            </div>
-        `;
+                <div class="publication-content">
+                    <h3 class="publication-title">${pub.title}</h3>
+                    <p class="publication-authors">${authorsText}</p>
+                    <div class="publication-meta">
+                        <span class="publication-date">${dateText}</span>
+                        ${pub.type ? `<span class="publication-badge">${pub.type.replace('-', ' ')}</span>` : ''}
+                    </div>
+                </div>
+            `;
 
-        container.appendChild(item);
-    });
+            container.appendChild(item);
+        });
 
     section.appendChild(container);                 
 }
@@ -94,31 +102,50 @@ const renderProjects = (repositories) => {
     const container = document.createElement('div');
     container.className = 'projects-grid';
 
-    repositories.forEach((repo) => {
-        const item = document.createElement('a');
-        item.className = 'project-card';
-        item.href = repo.homepage || repo.url;
-        item.target = '_blank';
-        item.rel = 'noopener noreferrer';
+    repositories
+        .filter((repo) => !blacklist.projects?.includes(repo.name))
+        .forEach((repo) => {
+            const item = document.createElement('a');
+            item.className = 'project-card';
+            item.href = repo.homepage || repo.url;
+            item.target = '_blank';
+            item.rel = 'noopener noreferrer';
 
-        const imageSrc = `assets/img/projects/${repo.name.toLowerCase()}.png`;
+            const imageSrc = `assets/img/projects/${repo.name.toLowerCase()}.png`;
 
-        item.innerHTML = `
-            <img 
-                src="${imageSrc}" 
-                alt="${repo.name}" 
-                loading="lazy"
-                onerror="this.onerror=null; this.src='assets/img/other/profile.jpg';"
-            >
-            <div class="project-overlay">
-                <span class="project-name">${repo.name}</span>
-            </div>
-        `;
+            item.innerHTML = `
+                <img 
+                    src="${imageSrc}" 
+                    alt="${repo.name}" 
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/img/icons/GitHub_Invertocat_White.svg'; this.classList.add('fallback-thumb');"
+                >
+                <div class="project-overlay">
+                    <span class="project-name">${repo.name}</span>
+                </div>
+            `;
 
-        container.appendChild(item);
-    });
+            container.appendChild(item);
+        });
 
     section.appendChild(container);
+}
+
+const formatAuthors = (authors, target = 'Michael Eickmeyer') => {
+    if (!authors || (Array.isArray(authors) && authors.length === 0)) {
+        return `<strong>${targetName}</strong>`;
+    }
+
+    const list = Array.isArray(authors) ? authors : [authors];
+
+    return list
+        .map((author) => {
+            if (author.toLowerCase().includes(target.toLowerCase())) {
+                return `<strong>${author}</strong>`;
+            }
+            return author;
+        })
+        .join(', ');
 }
 
 (async () => {
