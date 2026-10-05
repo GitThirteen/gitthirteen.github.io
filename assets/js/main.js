@@ -185,6 +185,7 @@ const renderPublications = (publications) => {
         
             item.innerHTML = `
                 <div class="publication-thumb">
+                    ${pub.type ? `<span class="publication-thumb-badge">${formatPubType(pub.type)}</span>` : ''}
                     <img 
                         src="${imgSrc}" 
                         alt="Teaser image for ${pub.title}" 
@@ -320,6 +321,23 @@ function getVenueLogoUrl(doi = '', url = '') {
     return DEFAULT_PAPER_SVG;
 }
 
+const formatPubType = (type) => {
+    if (!type) return '';
+
+    const map = {
+        'conference-paper': 'Conference Paper',
+        'journal-article': 'Journal Article',
+        'conference-proceedings': 'Proceedings',
+        'poster': 'Poster',
+        'talk': 'Talk',
+        'presentation': 'Talk',
+        'book-chapter': 'Book Chapter',
+        'preprint': 'Preprint'
+    };
+
+    return map[type.toLowerCase()] || type.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+};
+
 window.handlePaperImgError = function(imgElement, doi, url) {
     imgElement.onerror = null;
     const venueLogo = getVenueLogoUrl(doi, url);
@@ -336,6 +354,16 @@ window.handlePaperImgError = function(imgElement, doi, url) {
     const { lastUpdated, publications, repositories } = await res.json();
 
     console.log(`Last updated on: ${lastUpdated}`);
+
+    const syncEl = document.getElementById('last-synced');
+    if (syncEl && lastUpdated) {
+        const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', {
+            month: 'short',
+            year: 'numeric'
+        });
+        
+        syncEl.textContent = `Last synced ${formattedDate}`;
+    }
 
     renderPublications(publications);
     renderProjects(repositories);
