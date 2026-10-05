@@ -6,13 +6,128 @@ const blacklist = {
 document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.querySelector('.lang-btn');
     const langPicker = document.querySelector('.lang-picker');
+    const scrollbar = document.querySelector('.scrollbar');
+    const track = document.querySelector('.scroll-track');
+    const thumb = document.querySelector('.scroll-thumb');
+    const percentText = document.querySelector('.scroll-percent');
 
-    if (!langBtn || !langPicker) return;
+    if (!langBtn || !langPicker || !scrollbar || !track || !thumb || !percentText) return;
+
+    let isDragging = false;
+    let dragRafId = null;
+    let scrollRafId = null;
+    let cachedTrackRect = null;
+    let cachedMaxScroll = 0;
+    let pendingY = 0;
+
+    function setThumbPosition(progress) {
+        const clamped = Math.min(1, Math.max(0, progress));
+        thumb.style.top = `${clamped * 100}%`;
+        percentText.textContent = `${Math.round(clamped * 100)}%`;
+    }
+
+    function getScrollMetrics() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        return {
+            maxScroll: Math.max(0, scrollHeight - clientHeight),
+            trackRect: track.getBoundingClientRect()
+        };
+    }
+
+    function updateScroll() {
+        const { maxScroll } = getScrollMetrics();
+
+        // Hide scrollbar if content fits entirely on the viewport (4K, TV, short page)
+        if (maxScroll <= 2) {
+            scrollbar.classList.add('is-hidden');
+            return;
+        }
+        scrollbar.classList.remove('is-hidden');
+
+        if (!isDragging) {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+            setThumbPosition(progress);
+        }
+    }
+
+    // Smooth throttled scroll listener (prevents frame drops during natural scrolling)
+    window.addEventListener('scroll', () => {
+        if (isDragging) return;
+        if (!scrollRafId) {
+            scrollRafId = requestAnimationFrame(() => {
+                scrollRafId = null;
+                updateScroll();
+            });
+        }
+    }, { passive: true });
+
+    window.addEventListener('resize', updateScroll);
+
+    const resizeObserver = new ResizeObserver(() => updateScroll());
+    resizeObserver.observe(document.body);
+
+    // Perform the actual scroll and thumb update synced to VSync
+    function renderDrag() {
+        dragRafId = null;
+        const offsetY = pendingY - cachedTrackRect.top;
+        const ratio = Math.min(1, Math.max(0, offsetY / cachedTrackRect.height));
+
+        setThumbPosition(ratio);
+
+        window.scrollTo({
+            top: ratio * cachedMaxScroll,
+            behavior: 'auto'
+        });
+    }
+
+    scrollbar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.body.style.userSelect = 'none';
+
+        const metrics = getScrollMetrics();
+        cachedTrackRect = metrics.trackRect;
+        cachedMaxScroll = metrics.maxScroll;
+
+        pendingY = e.clientY;
+        renderDrag();
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+
+        pendingY = e.clientY;
+
+        if (!dragRafId) {
+            dragRafId = requestAnimationFrame(renderDrag);
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+
+        isDragging = false;
+        document.body.style.userSelect = '';
+        
+        // Restore CSS smooth scrolling for anchor jump links
+        document.documentElement.style.scrollBehavior = '';
+
+        if (dragRafId) {
+        cancelAnimationFrame(dragRafId);
+        dragRafId = null;
+        }
+
+        updateScroll();
+    });
 
     // Toggle dropdown on button click
     langBtn.addEventListener('click', () => {
         const isOpen = langBtn.getAttribute('aria-expanded') === 'true';
-            langBtn.setAttribute('aria-expanded', String(!isOpen));
+        langBtn.setAttribute('aria-expanded', String(!isOpen));
     });
 
     // Close when clicking outside the component
@@ -29,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
             langBtn.focus();
         }
     });
+
+    updateScroll();
 });
 
 function getDoiImageFilename(doi) {
