@@ -160,7 +160,7 @@ const renderPublications = (publications) => {
     const placeholder = section.querySelector('p');
     if (placeholder) placeholder.remove();
 
-    section.insertAdjacentHTML('beforeend', `<p>${publications.length} publication${publications.length === 1 ? '' : 's'} found.</p>`);
+    section.insertAdjacentHTML('beforeend', `<p class="publication-count">${publications.length} publication${publications.length === 1 ? '' : 's'} found.</p>`);
 
     if (publications.length === 0) {
         return;
@@ -178,12 +178,8 @@ const renderPublications = (publications) => {
             item.target = '_blank';
             item.rel = 'noopener noreferrer';
 
-            const authorsText = Array.isArray(pub.authors)
-                ? pub.authors.join(', ')
-                : (pub.authors || 'Michael Eickmeyer');
-
-            const dateText = pub.publicationDate || pub.year || 'Unknown date';
-
+            const authors = formatAuthors(pub.authors);
+            const citationText = formatVenueCitation(pub);
             const imageFilename = pub.image || (pub.doi ? getDoiImageFilename(pub.doi) : `${pub.id}.png`);
             const imgSrc = `assets/img/papers/${imageFilename}`;
         
@@ -193,15 +189,14 @@ const renderPublications = (publications) => {
                         src="${imgSrc}" 
                         alt="Teaser image for ${pub.title}" 
                         loading="lazy"
-                        onerror="this.onerror=null; this.src='assets/img/other/profile.jpg';"
+                        onerror="window.handlePaperImgError(this, '${pub.doi || ''}', '${pub.url || ''}')"
                     >
                 </div>
                 <div class="publication-content">
                     <h3 class="publication-title">${pub.title}</h3>
-                    <p class="publication-authors">${authorsText}</p>
+                    <p class="publication-authors">${authors}</p>
                     <div class="publication-meta">
-                        <span class="publication-date">${dateText}</span>
-                        ${pub.type ? `<span class="publication-badge">${pub.type.replace('-', ' ')}</span>` : ''}
+                        <span class="publication-venue">${citationText}</span>
                     </div>
                 </div>
             `;
@@ -264,6 +259,77 @@ const formatAuthors = (authors, target = 'Michael Eickmeyer') => {
         })
         .join(', ');
 }
+
+const formatVenueCitation = (pub) => {
+    const year = pub.year || (pub.publicationDate ? pub.publicationDate.split('-')[0] : '');
+    const yearSuffix = year ? ` (${year})` : '';
+
+    if (pub.venue) {
+        const cleanVenue = pub.venue.replace(/^in\s+/i, '').trim(); // Strip redundant leading "In " if Crossref already includes it
+        return `In ${cleanVenue}${yearSuffix}`;
+    }
+
+    if (pub.type === 'conference-paper' || pub.type === 'conference-proceedings') {
+        return `In Proceedings${yearSuffix}`;
+    }
+    
+    if (pub.type === 'journal-article') {
+        return `In Journal Article${yearSuffix}`;
+    }
+
+    return `Published${yearSuffix}`;
+};
+
+const DEFAULT_PAPER_SVG = `data:image/svg+xml;utf8,${encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70" fill="none">
+        <rect width="120" height="70" fill="#111111"/>
+        <path d="M48 18H66L74 26V52H48V18Z" fill="#1c1a1d" stroke="#ff3b30" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M66 18V26H74" stroke="#ff3b30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="53" y1="32" x2="69" y2="32" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="53" y1="38" x2="69" y2="38" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="53" y1="44" x2="63" y2="44" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+`)}`;
+
+function getVenueLogoUrl(doi = '', url = '') {
+    const cleanDoi = (doi || '').toLowerCase();
+    const cleanUrl = (url || '').toLowerCase();
+
+    // ACM (Association for Computing Machinery)
+    if (cleanDoi.startsWith('10.1145') || cleanUrl.includes('acm.org')) {
+        return 'https://cdn.simpleicons.org/acm/white';
+    }
+    // IEEE
+    if (cleanDoi.startsWith('10.1109') || cleanUrl.includes('ieee.org')) {
+        return 'https://cdn.simpleicons.org/ieee/00629B';
+    }
+    // arXiv
+    if (cleanDoi.startsWith('10.48550') || cleanUrl.includes('arxiv.org')) {
+        return 'https://cdn.simpleicons.org/arxiv/B31B1B';
+    }
+    // Springer
+    if (cleanDoi.startsWith('10.1007') || cleanUrl.includes('springer')) {
+        return 'https://cdn.simpleicons.org/springer/white';
+    }
+    // Elsevier
+    if (cleanDoi.startsWith('10.1016') || cleanUrl.includes('elsevier')) {
+        return 'https://cdn.simpleicons.org/elsevier/FF6C00';
+    }
+
+    // Unknown / unindexed venue
+    return DEFAULT_PAPER_SVG;
+}
+
+window.handlePaperImgError = function(imgElement, doi, url) {
+    imgElement.onerror = null;
+    const venueLogo = getVenueLogoUrl(doi, url);
+
+    imgElement.src = venueLogo;
+
+    if (venueLogo !== DEFAULT_PAPER_SVG) {
+        imgElement.classList.add('venue-logo-thumb');
+    }
+};
 
 (async () => {
     const res = await fetch('./assets/json/data.json');

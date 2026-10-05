@@ -110,7 +110,7 @@ class Fetcher {
 
             const dateObj = summary['publication-date'];
             const year = dateObj?.year?.value || null;
-            const authors = await this.crossrefAuthors(doi) || ['Michael Eickmeyer'];
+            const crossrefData = await getCrossrefMetadata(doi);
 
             verified.push({
                 id: summary['put-code'],
@@ -120,14 +120,15 @@ class Fetcher {
                 doi,
                 url: `https://doi.org/${doi}`,
                 source: summary.source?.['source-name']?.value || 'Verified Source',
-                authors: authors
+                authors: crossrefData?.authors || ['Michael Eickmeyer'],
+                venue: crossrefData?.venue || null
             });
         }
 
         return verified.sort((a, b) => (b.year || 0) - (a.year || 0));
     }
 
-    async crossrefAuthors(doi) {
+    async crossrefMetadata(doi) {
         try {
             const res = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, {
                 headers: {
@@ -138,13 +139,15 @@ class Fetcher {
             if (!res.ok) return null;
 
             const data = await res.json();
-            const authors = data.message?.author;
-            if (Array.isArray(authors) && authors.length > 0) {
-                return authors.map((a) => `${a.given || ''} ${a.family || ''}`.trim());
-            }
+            const message = data.message;
+
+            const authors = message.author?.map((a) => `${a.given || ''} ${a.family || ''}`.trim());
+            const venue = message['container-title']?.[0] || message.event?.name || null;
+            return { authors, venue };
         } catch (err) {
             console.warn(`Could not resolve authors for DOI ${doi}:`, err.message);
         }
+        
         return null;
     }
 
