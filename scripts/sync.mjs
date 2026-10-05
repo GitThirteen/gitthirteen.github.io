@@ -110,7 +110,7 @@ class Fetcher {
 
             const dateObj = summary['publication-date'];
             const year = dateObj?.year?.value || null;
-            const crossrefData = await getCrossrefMetadata(doi);
+            const crossrefData = await this.crossrefMetadata(doi);
 
             verified.push({
                 id: summary['put-code'],
