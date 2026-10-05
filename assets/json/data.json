@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T00:39:13.900Z",
+  "lastUpdated": "2026-10-05T10:29:40.513Z",
   "publications": [
     {
       "id": 224904849,
@@ -14,7 +14,8 @@
         "Oskar Seierl",
         "Martina Landman",
         "René Röpke"
-      ]
+      ],
+      "venue": "Proceedings of the 20th WiPSCE Conference on Primary and Secondary Computing Education Research"
     }
   ],
   "repositories": [
@@ -28,7 +29,7 @@
       "forks": 0,
       "language": "JavaScript",
       "topics": [],
-      "updatedAt": "2026-10-05T00:38:55Z"
+      "updatedAt": "2026-10-05T10:29:26Z"
     },
     {
       "id": 1401402321,
@@ -151,26 +152,6 @@
         "python"
       ],
       "updatedAt": "2023-10-31T15:54:56Z"
-    },
-    {
-      "id": 612757547,
-      "name": "booruloader",
-      "description": "A (not so) small JS script for batch-downloading images from Booru services.",
-      "url": "https://github.com/GitThirteen/booruloader",
-      "homepage": null,
-      "stars": 0,
-      "forks": 0,
-      "language": "JavaScript",
-      "topics": [
-        "booru",
-        "danbooru",
-        "downloader",
-        "gelbooru",
-        "javascript",
-        "js",
-        "script"
-      ],
-      "updatedAt": "2023-03-13T10:36:11Z"
     },
     {
       "id": 609208889,
