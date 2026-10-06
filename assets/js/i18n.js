@@ -44,6 +44,10 @@ const storeLang = (code) => {
 
 const readUrlLang = () => normalize(new URLSearchParams(window.location.search).get('lang'));
 
+// A stale "#?lang=xx" hash (e.g. from an older build or a hand-edited URL) would otherwise
+// survive every switch and shadow the real query parameter, so strip it.
+const isStaleLangHash = (hash) => /^#\?.*\blang=/.test(hash);
+
 /** Reflects the active language in the URL so the page stays shareable. */
 const syncUrl = (code) => {
     const url = new URL(window.location.href);
@@ -54,7 +58,9 @@ const syncUrl = (code) => {
         url.searchParams.set('lang', code);
     }
 
-    window.history.replaceState(null, '', url);
+    if (isStaleLangHash(url.hash)) url.hash = '';
+
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
 };
 
 const readBrowserLang = () => {

@@ -2,11 +2,19 @@ import { SUPPORTED_LANGS, getLanguage, setLanguage } from '../i18n.js';
 
 const FLAG_URL = (code) => `https://hatscripts.github.io/circle-flags/flags/${code}.svg`;
 
+// Absolute path so the link never resolves against a stale "#..." hash in the address bar,
+// and so the language is a real, shareable URL even with JS disabled.
+const buildLangHref = (code) => {
+    const url = new URL(window.location.pathname, window.location.origin);
+    if (code !== 'en') url.searchParams.set('lang', code);
+    return `${url.pathname}${url.search}`;
+};
+
 /** Rebuilds the dropdown entries, marking the active language. */
 const renderMenu = (menu, activeCode) => {
     menu.innerHTML = SUPPORTED_LANGS.map(({ code, name, flag }) => `
         <li>
-            <a href="?lang=${code}" data-lang="${code}" lang="${code}" hreflang="${code}"
+            <a href="${buildLangHref(code)}" data-lang="${code}" lang="${code}" hreflang="${code}"
                ${code === activeCode ? 'aria-current="true"' : ''}>
                 <img src="${FLAG_URL(flag)}" class="flag-icon" alt="" aria-hidden="true"> ${name}
             </a>
