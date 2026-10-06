@@ -3,6 +3,10 @@ const blacklist = {
     'publications': []
 }
 
+const whitelist = {
+    'currentProjects': ['obsidian', 'saucebottle', 'ds-compare', 'lightcraft', 'visualizations']
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.querySelector('.lang-btn');
     const langPicker = document.querySelector('.lang-picker');
@@ -208,41 +212,85 @@ const renderPublications = (publications) => {
     section.appendChild(container);                 
 }
 
-const renderProjects = (repositories) => {
+const renderProjects = (repositories, filter = 'current') => {
     const section = document.getElementById('projects');
     if (!section || repositories.length === 0) return;
 
-    const container = document.createElement('div');
-    container.className = 'projects-grid';
+    let container = section.querySelector('.projects-grid');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'projects-grid';
+        section.appendChild(container);
+    }
+    container.innerHTML = '';
 
-    repositories
+    const filtered = repositories
         .filter((repo) => !blacklist.projects?.includes(repo.name))
-        .forEach((repo) => {
-            const item = document.createElement('a');
-            item.className = 'project-card';
-            item.href = repo.homepage || repo.url;
-            item.target = '_blank';
-            item.rel = 'noopener noreferrer';
-
-            const imageSrc = `assets/img/projects/${repo.name.toLowerCase()}.png`;
-
-            item.innerHTML = `
-                <img 
-                    src="${imageSrc}" 
-                    alt="${repo.name}" 
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/img/icons/GitHub_Invertocat_White.svg'; this.classList.add('fallback-thumb');"
-                >
-                <div class="project-overlay">
-                    <span class="project-name">${repo.name}</span>
-                </div>
-            `;
-
-            container.appendChild(item);
+        .filter((repo) => {
+            if (filter === 'current') {
+                return whitelist.currentProjects.some((name) => name.toLowerCase() === repo.name.toLowerCase());
+            }
+            return true;
         });
 
-    section.appendChild(container);
+    if (filtered.length === 0) {
+        container.innerHTML = `<p class="projects-empty">No ${filter === 'current' ? 'current ' : ''}projects to display.</p>`;
+        return;
+    }
+
+    filtered.forEach((repo) => {
+        const item = document.createElement('a');
+        item.className = 'project-card';
+        item.href = repo.homepage || repo.url;
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+
+        const imageSrc = `assets/img/projects/${repo.name.toLowerCase()}.png`;
+
+        item.innerHTML = `
+            <img 
+                src="${imageSrc}" 
+                alt="${repo.name}" 
+                loading="lazy"
+                onerror="this.onerror=null; this.src='assets/img/icons/GitHub_Invertocat_White.svg'; this.classList.add('fallback-thumb');"
+            >
+            <div class="project-overlay">
+                <span class="project-name">${repo.name}</span>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
 }
+
+const initProjectFilter = (repositories) => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    if (!buttons.length) return;
+
+    buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('active')) return;
+
+            buttons.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const container = document.querySelector('.projects-grid');
+            if (!container) {
+                renderProjects(repositories, btn.dataset.filter);
+                return;
+            }
+
+            container.classList.add('is-filtering');
+            
+            setTimeout(() => {
+                renderProjects(repositories, btn.dataset.filter);
+                requestAnimationFrame(() => {
+                    container.classList.remove('is-filtering');
+                });
+            }, 150);
+        });
+    });
+};
 
 const formatAuthors = (authors, target = 'Michael Eickmeyer') => {
     if (!authors || (Array.isArray(authors) && authors.length === 0)) {
@@ -355,16 +403,17 @@ window.handlePaperImgError = function(imgElement, doi, url) {
 
     console.log(`Last updated on: ${lastUpdated}`);
 
-    const syncEl = document.getElementById('last-synced');
-    if (syncEl && lastUpdated) {
+    const syncer = document.getElementById('last-synced');
+    if (syncer && lastUpdated) {
         const formattedDate = new Date(lastUpdated).toLocaleDateString('en-US', {
             month: 'short',
             year: 'numeric'
         });
         
-        syncEl.textContent = `Last synced ${formattedDate}`;
+        syncer.textContent = `Last synced ${formattedDate}`;
     }
 
     renderPublications(publications);
-    renderProjects(repositories);
+    initProjectFilter(repositories);
+    renderProjects(repositories, 'current');
 })();
