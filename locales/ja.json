@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "個人ページ | Michael Eickmeyer",
+    "description": "Michael Eickmeyer の個人ページ。ウィーン工科大学（TU Wien）Visual Computing 専攻の修士課程学生。コンピュータグラフィックスと可視化に関するプロジェクト、論文、研究分野を紹介しています。"
+  },
+  "nav": {
+    "about": "プロフィール",
+    "projects": "プロジェクト",
+    "publications": "論文",
+    "visualizations": "可視化",
+    "lightcraft": "Lightcraft",
+    "menuLabel": "ナビゲーションメニューを切り替える",
+    "onThisPageLabel": "このページ内",
+    "redirectsLabel": "他のページへのリンク",
+    "langLabel": "言語を変更（現在：{language}）",
+    "langMenuLabel": "言語を選択"
+  },
+  "bio": {
+    "name": "Michael Eickmeyer",
+    "subtitle": "ウィーン工科大学 Visual Computing 専攻 修士課程 @",
+    "intro": "こんにちは、ミヒャエルです！ようこそお越しくださいました。",
+    "focus": "私はウィーンのウィーン工科大学で修士課程に在籍し、Visual Computing を専攻しています。主な関心はコンピュータグラフィックスと可視化にありますが、他の分野にもそれなりに手を出しているので、あまり気にしていません。",
+    "below": "下には、現在のプロジェクト、論文、その他世界と共有したいものをまとめています。また現在、物理ベースレンダリングについてのインタラクティブな入門オンライン教科書とスライド資料『<a href=\"/lightcraft/\" class=\"link-lc\">Lightcraft</a>』を制作しています。最新版は完全無料で、可視化プロジェクトとあわせてヘッダーの右側からご覧いただけます！",
+    "milestones": "主な実績：",
+    "milestone1": "2025年に、<a href=\"https://www.cg.tuwien.ac.at/staff/MichaelWimmer\" target=\"_blank\" rel=\"noopener noreferrer\">Michael Wimmer 教授</a>の指導のもと、メディア情報学および Visual Computing の学士号を取得しました。",
+    "milestone2": "2022年から2026年まで、<a href=\"https://edulab.tuwien.ac.at/\" target=\"_blank\" rel=\"noopener noreferrer\">eduLAB</a> にて情報科学教育プロジェクト DigiFit4All と Dev0land の開発を支援しました。",
+    "milestone3": "今年、初めてのハーフマラソンを完走しました！（やったー！）",
+    "profileAlt": "Michael Eickmeyer のプロフィール写真"
+  },
+  "sections": {
+    "interests": "研究分野",
+    "projects": "プロジェクト",
+    "publications": "論文",
+    "other": "その他の制作物"
+  },
+  "interests": {
+    "list": "モンテカルロレンダリング・パスガイディング・リアルタイムレンダリング・デノイジング・加速構造・CS教育"
+  },
+  "projects": {
+    "filter_current": "現在",
+    "filter_all": "すべて",
+    "empty": "表示するプロジェクトがありません。",
+    "emptyCurrent": "表示する現在のプロジェクトがありません。"
+  },
+  "publications": {
+    "count_one": "{n} 件の論文が見つかりました。",
+    "count_other": "{n} 件の論文が見つかりました。",
+    "teaserAlt": "{title} のティーザー画像"
+  },
+  "pubTypes": {
+    "conference-paper": "会議論文",
+    "journal-article": "学術論文",
+    "conference-proceedings": "予稿集",
+    "poster": "ポスター",
+    "talk": "講演",
+    "presentation": "講演",
+    "book-chapter": "書籍の章",
+    "preprint": "プレプリント"
+  },
+  "citation": {
+    "in": "掲載",
+    "proceedings": "予稿集に掲載",
+    "journal": "学術誌に掲載",
+    "published": "公開"
+  },
+  "otherWork": {
+    "thesis": "学位論文",
+    "contestPoster": "コンテストポスター"
+  },
+  "footer": {
+    "copyright": "© 2026 Michael Eickmeyer",
+    "madeWith": "作るのに使ったのは",
+    "coffeeFluff": "大量の",
+    "coffee": "コーヒー",
+    "synced": "GitHub Actions で同期",
+    "lastSynced": "最終同期：{date}",
+    "coffeeLink": "コーヒーをおごる",
+    "source": "ソース",
+    "backToTop": "トップへ戻る ↑",
+    "navLabel": "外部リンクとソース"
+  }
+}

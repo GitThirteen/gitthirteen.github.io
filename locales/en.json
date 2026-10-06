@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Personal Page | Michael Eickmeyer",
+    "description": "Personal page of Michael Eickmeyer, Master's student in Visual Computing at TU Wien. Projects, publications, and research interests in computer graphics and visualization."
+  },
+  "nav": {
+    "about": "About Me",
+    "projects": "Projects",
+    "publications": "Publications",
+    "visualizations": "Visualizations",
+    "lightcraft": "Lightcraft",
+    "menuLabel": "Toggle navigation menu",
+    "onThisPageLabel": "On this page",
+    "redirectsLabel": "Redirects to other pages",
+    "langLabel": "Change language (Current: {language})",
+    "langMenuLabel": "Select language"
+  },
+  "bio": {
+    "name": "Michael Eickmeyer",
+    "subtitle": "Master's Student in Visual Computing @",
+    "intro": "Hi there, name's Michael! Happy to have you here.",
+    "focus": "I am a master's student at TU Wien in Vienna, currently majoring in Visual Computing. My primary focus lies in Computer Graphics and Visualization, but I dabble often enough in other areas for it to not really matter.",
+    "below": "Down below you will find all my current projects, publications, and whatever other stuff I feel like sharing with the world. I am also currently working on an interactive, introductory online textbook & slidedeck about physically-based rendering called <a href=\"/lightcraft/\" class=\"link-lc\">Lightcraft</a>. You can find the current version for completely free, along with my visualization projects, on the right side of the header!",
+    "milestones": "Some milestones:",
+    "milestone1": "I obtained my B.Sc. in Media Inf. & Visual Computing in 2025 under the supervision of <a href=\"https://www.cg.tuwien.ac.at/staff/MichaelWimmer\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Michael Wimmer</a>.",
+    "milestone2": "From 2022 - 2026, I aided the development of the DigiFit4All & Dev0land CS education projects at <a href=\"https://edulab.tuwien.ac.at/\" target=\"_blank\" rel=\"noopener noreferrer\">eduLAB</a>.",
+    "milestone3": "I ran my first half marathon this year and survived! (wohoo!)",
+    "profileAlt": "Profile picture of Michael Eickmeyer"
+  },
+  "sections": {
+    "interests": "Research Interests",
+    "projects": "Projects",
+    "publications": "Publications",
+    "other": "Other Work"
+  },
+  "interests": {
+    "list": "Monte-Carlo Rendering, Path Guiding, Real-time Rendering, Denoising, Acceleration Structures, CS Education"
+  },
+  "projects": {
+    "filter_current": "Current",
+    "filter_all": "All",
+    "empty": "No projects to display.",
+    "emptyCurrent": "No current projects to display."
+  },
+  "publications": {
+    "count_one": "{n} publication found.",
+    "count_other": "{n} publications found.",
+    "teaserAlt": "Teaser image for {title}"
+  },
+  "pubTypes": {
+    "conference-paper": "Conference Paper",
+    "journal-article": "Journal Article",
+    "conference-proceedings": "Proceedings",
+    "poster": "Poster",
+    "talk": "Talk",
+    "presentation": "Talk",
+    "book-chapter": "Book Chapter",
+    "preprint": "Preprint"
+  },
+  "citation": {
+    "in": "In",
+    "proceedings": "In Proceedings",
+    "journal": "In Journal Article",
+    "published": "Published"
+  },
+  "otherWork": {
+    "thesis": "Thesis",
+    "contestPoster": "Contest Poster"
+  },
+  "footer": {
+    "copyright": "© 2026 Michael Eickmeyer",
+    "madeWith": "Made with",
+    "coffeeFluff": "a lot of ",
+    "coffee": "coffee",
+    "synced": "Synced via GitHub Actions",
+    "lastSynced": "Last synced {date}",
+    "coffeeLink": "Grab Me a Coffee",
+    "source": "Source",
+    "backToTop": "Back to top ↑",
+    "navLabel": "External and source links"
+  }
+}

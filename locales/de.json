@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Persönliche Seite | Michael Eickmeyer",
+    "description": "Persönliche Seite von Michael Eickmeyer, Masterstudent im Bereich Visual Computing an der TU Wien. Projekte, Publikationen und Forschungsinteressen in Computergrafik und Visualisierung."
+  },
+  "nav": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "publications": "Publikationen",
+    "visualizations": "Visualisierungen",
+    "lightcraft": "Lightcraft",
+    "menuLabel": "Navigationsmenü umschalten",
+    "onThisPageLabel": "Auf dieser Seite",
+    "redirectsLabel": "Weiterleitungen zu anderen Seiten",
+    "langLabel": "Sprache ändern (Aktuell: {language})",
+    "langMenuLabel": "Sprache auswählen"
+  },
+  "bio": {
+    "name": "Michael Eickmeyer",
+    "subtitle": "Masterstudent im Bereich Visual Computing @",
+    "intro": "Hallo, ich bin Michael! Schön, dass du hier bist.",
+    "focus": "Ich studiere im Master an der TU Wien mit Schwerpunkt Visual Computing. Mein Hauptinteresse gilt der Computergrafik und der Visualisierung, aber ich probiere oft genug auch andere Bereiche aus, sodass es nicht wirklich eine Rolle spielt.",
+    "below": "Unten findest du alle meine aktuellen Projekte, Publikationen und sonstigen Dinge, die ich mit der Welt teilen möchte. Außerdem arbeite ich derzeit an einem interaktiven, einführenden Online-Lehrbuch samt Foliensatz über physikalisch basiertes Rendering namens <a href=\"/lightcraft/\" class=\"link-lc\">Lightcraft</a>. Die aktuelle Version gibt es völlig kostenlos, zusammen mit meinen Visualisierungsprojekten, rechts oben im Header!",
+    "milestones": "Einige Meilensteine:",
+    "milestone1": "2025 habe ich meinen B.Sc. in Medieninformatik & Visual Computing unter der Betreuung von <a href=\"https://www.cg.tuwien.ac.at/staff/MichaelWimmer\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Michael Wimmer</a> erworben.",
+    "milestone2": "Von 2022 bis 2026 habe ich die Entwicklung der Informatik-Bildungsprojekte DigiFit4All & Dev0land am <a href=\"https://edulab.tuwien.ac.at/\" target=\"_blank\" rel=\"noopener noreferrer\">eduLAB</a> unterstützt.",
+    "milestone3": "Ich bin dieses Jahr meinen ersten Halbmarathon gelaufen und habe überlebt! (Wohoo!)",
+    "profileAlt": "Profilbild von Michael Eickmeyer"
+  },
+  "sections": {
+    "interests": "Forschungsinteressen",
+    "projects": "Projekte",
+    "publications": "Publikationen",
+    "other": "Weitere Arbeiten"
+  },
+  "interests": {
+    "list": "Monte-Carlo-Rendering, Path Guiding, Echtzeit-Rendering, Denoising, Beschleunigungsstrukturen, Informatik-Bildung"
+  },
+  "projects": {
+    "filter_current": "Aktuell",
+    "filter_all": "Alle",
+    "empty": "Keine Projekte anzuzeigen.",
+    "emptyCurrent": "Keine aktuellen Projekte anzuzeigen."
+  },
+  "publications": {
+    "count_one": "{n} Publikation gefunden.",
+    "count_other": "{n} Publikationen gefunden.",
+    "teaserAlt": "Vorschaubild für {title}"
+  },
+  "pubTypes": {
+    "conference-paper": "Konferenzbeitrag",
+    "journal-article": "Zeitschriftenartikel",
+    "conference-proceedings": "Tagungsband",
+    "poster": "Poster",
+    "talk": "Vortrag",
+    "presentation": "Vortrag",
+    "book-chapter": "Buchkapitel",
+    "preprint": "Preprint"
+  },
+  "citation": {
+    "in": "In",
+    "proceedings": "In Tagungsband",
+    "journal": "In Zeitschriftenartikel",
+    "published": "Veröffentlicht"
+  },
+  "otherWork": {
+    "thesis": "Abschlussarbeit",
+    "contestPoster": "Wettbewerbsposter"
+  },
+  "footer": {
+    "copyright": "© 2026 Michael Eickmeyer",
+    "madeWith": "Erstellt mit",
+    "coffeeFluff": "sehr viel ",
+    "coffee": "Kaffee",
+    "synced": "Synchronisiert über GitHub Actions",
+    "lastSynced": "Zuletzt synchronisiert: {date}",
+    "coffeeLink": "Spendier mir einen Kaffee",
+    "source": "Source",
+    "backToTop": "Zurück nach oben ↑",
+    "navLabel": "Externe Links und Source"
+  }
+}

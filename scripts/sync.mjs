@@ -46,7 +46,7 @@ class Fetcher {
                 repos.push({
                     id: repo.id,
                     name: repo.name,
-                    description: repo.description,
+                    description: repo.description || '',
                     url: repo.html_url,
                     homepage: repo.homepage || null,
                     stars: repo.stargazers_count,

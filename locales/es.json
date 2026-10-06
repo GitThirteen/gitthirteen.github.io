@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Página personal | Michael Eickmeyer",
+    "description": "Página personal de Michael Eickmeyer, estudiante de máster en Visual Computing en la TU Wien. Proyectos, publicaciones e intereses de investigación en gráficos por computadora y visualización."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "publications": "Publicaciones",
+    "visualizations": "Visualizaciones",
+    "lightcraft": "Lightcraft",
+    "menuLabel": "Alternar el menú de navegación",
+    "onThisPageLabel": "En esta página",
+    "redirectsLabel": "Enlaces a otras páginas",
+    "langLabel": "Cambiar idioma (Actual: {language})",
+    "langMenuLabel": "Seleccionar idioma"
+  },
+  "bio": {
+    "name": "Michael Eickmeyer",
+    "subtitle": "Estudiante de máster en Visual Computing @",
+    "intro": "¡Hola, soy Michael! Me alegra que estés aquí.",
+    "focus": "Soy estudiante de máster en la TU Wien, en Viena, con especialización en Visual Computing. Mi interés principal está en los gráficos por computadora y la visualización, aunque toco otras áreas lo suficiente como para que realmente no importe.",
+    "below": "Abajo encontrarás todos mis proyectos actuales, publicaciones y cualquier otra cosa que me apetezca compartir con el mundo. Además, estoy trabajando en un libro de texto interactivo de introducción y un conjunto de diapositivas sobre renderizado basado en física llamado <a href=\"/lightcraft/\" class=\"link-lc\">Lightcraft</a>. ¡Puedes encontrar la versión actual totalmente gratis, junto con mis proyectos de visualización, en la parte derecha del encabezado!",
+    "milestones": "Algunos hitos:",
+    "milestone1": "Obtuve mi B.Sc. en Media Inf. & Visual Computing en 2025 bajo la supervisión del <a href=\"https://www.cg.tuwien.ac.at/staff/MichaelWimmer\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Michael Wimmer</a>.",
+    "milestone2": "De 2022 a 2026 colaboré en el desarrollo de los proyectos de educación en informática DigiFit4All y Dev0land en el <a href=\"https://edulab.tuwien.ac.at/\" target=\"_blank\" rel=\"noopener noreferrer\">eduLAB</a>.",
+    "milestone3": "¡Este año corrí mi primer medio maratón y sobreviví! (¡vamos!)",
+    "profileAlt": "Foto de perfil de Michael Eickmeyer"
+  },
+  "sections": {
+    "interests": "Intereses de investigación",
+    "projects": "Proyectos",
+    "publications": "Publicaciones",
+    "other": "Otros trabajos"
+  },
+  "interests": {
+    "list": "Rendering de Monte Carlo, path guiding, rendering en tiempo real, denoising, estructuras de aceleración, educación en informática"
+  },
+  "projects": {
+    "filter_current": "Actuales",
+    "filter_all": "Todos",
+    "empty": "No hay proyectos que mostrar.",
+    "emptyCurrent": "No hay proyectos actuales que mostrar."
+  },
+  "publications": {
+    "count_one": "Se encontró {n} publicación.",
+    "count_other": "Se encontraron {n} publicaciones.",
+    "teaserAlt": "Imagen de vista previa de {title}"
+  },
+  "pubTypes": {
+    "conference-paper": "Artículo de congreso",
+    "journal-article": "Artículo de revista",
+    "conference-proceedings": "Actas",
+    "poster": "Póster",
+    "talk": "Charla",
+    "presentation": "Charla",
+    "book-chapter": "Capítulo de libro",
+    "preprint": "Preimpresión"
+  },
+  "citation": {
+    "in": "En",
+    "proceedings": "En actas",
+    "journal": "En artículo de revista",
+    "published": "Publicado"
+  },
+  "otherWork": {
+    "thesis": "Tesis",
+    "contestPoster": "Póster de concurso"
+  },
+  "footer": {
+    "copyright": "© 2026 Michael Eickmeyer",
+    "madeWith": "Hecho con",
+    "coffeeFluff": "mucho ",
+    "coffee": "café",
+    "synced": "Sincronizado mediante GitHub Actions",
+    "lastSynced": "Última sincronización: {date}",
+    "coffeeLink": "Invítame a un café",
+    "source": "Source",
+    "backToTop": "Volver arriba ↑",
+    "navLabel": "Enlaces externos y source"
+  }
+}

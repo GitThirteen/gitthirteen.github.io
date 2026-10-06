@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Page | Michael Eickmeyer</title>
+  <meta name="description" content="Personal page of Michael Eickmeyer, Master's student in Visual Computing at TU Wien.">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-  <script src="assets/js/main.js" defer></script>
+  <script type="module" src="assets/js/main.js"></script>
 </head>
 
 <body>
@@ -22,63 +23,55 @@
   </div>
 
   <header>
-    <nav class="jumpers" aria-label="On this page">
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-    </nav>
-    <nav class="redirects" aria-label="Redirects to other pages">
-      <a class="btn-vs" href="/visualizations/">Visualizations</a>
-      <a class="btn-lc" href="/lightcraft/">Lightcraft</a>
-      <div class="lang-picker">
-        <button 
-          type="button" 
-          class="lang-btn" 
-          aria-expanded="false" 
-          aria-haspopup="true" 
-          aria-label="Change language (Current: English)">
-          <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="flag-icon" alt="" aria-hidden="true">
-          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-          </svg>
-        </button>
+    <button 
+      type="button" 
+      class="burger-btn" 
+      data-i18n-attr="aria-label:nav.menuLabel"
+      aria-label="Toggle navigation menu" 
+      aria-expanded="false" 
+      aria-controls="nav-drawer">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
 
-        <ul class="lang-menu" role="list">
-          <li>
-            <a href="/en/" lang="en" hreflang="en" aria-current="true">
-              <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="flag-icon" alt="" aria-hidden="true"> English
-            </a>
-          </li>
-          <li>
-            <a href="/de/" lang="de" hreflang="de">
-              <img src="https://hatscripts.github.io/circle-flags/flags/de.svg" class="flag-icon" alt="" aria-hidden="true"> Deutsch
-            </a>
-          </li>
-          <li>
-            <a href="/es/" lang="es" hreflang="es">
-              <img src="https://hatscripts.github.io/circle-flags/flags/es.svg" class="flag-icon" alt="" aria-hidden="true"> Español
-            </a>
-          </li>
-          <li>
-            <a href="/ru/" lang="ru" hreflang="ru">
-              <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" class="flag-icon" alt="" aria-hidden="true"> Русский
-            </a>
-          </li>
-          <li>
-            <a href="/jp/" lang="ja" hreflang="ja">
-              <img src="https://hatscripts.github.io/circle-flags/flags/jp.svg" class="flag-icon" alt="" aria-hidden="true"> 日本語
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+      <nav class="jumpers" aria-label="On this page" data-i18n-attr="aria-label:nav.onThisPageLabel">
+        <a href="#about" data-i18n="nav.about">About Me</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#publications" data-i18n="nav.publications">Publications</a>
+      </nav>
+
+      <div class="nav-drawer-divider" aria-hidden="true"></div>
+
+      <nav class="redirects" aria-label="Redirects to other pages" data-i18n-attr="aria-label:nav.redirectsLabel">
+        <a class="btn-vs" href="/visualizations/" data-i18n="nav.visualizations">Visualizations</a>
+        <a class="btn-lc" href="/lightcraft/" data-i18n="nav.lightcraft">Lightcraft</a>
+        <div class="lang-picker">
+          <button 
+            type="button" 
+            class="lang-btn" 
+            aria-expanded="false" 
+            aria-haspopup="true" 
+            aria-label="Change language (Current: English)"
+            data-i18n-attr="aria-label:nav.langLabel">
+            <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="flag-icon" alt="" aria-hidden="true" data-lang-flag>
+            <svg class="chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <ul class="lang-menu" role="list" aria-label="Select language" data-i18n-attr="aria-label:nav.langMenuLabel" data-lang-menu></ul>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
     <div id="about">
       <div class="profile">
         <div class="profile-left">
-          <img src="assets/img/other/profile.jpg" alt="Profile picture of Michael Eickmeyer" class="profile-img">
+          <img src="assets/img/other/profile.jpg" alt="Profile picture of Michael Eickmeyer" class="profile-img" data-i18n-attr="alt:bio.profileAlt">
           <div class="socials">
             <a href="https://github.com/gitthirteen" target="_blank" rel="noopener noreferrer" title="GitHub">
               <img src="assets/img/icons/GitHub_Invertocat_White.svg" alt="GitHub logo" class="social-icon">
@@ -98,58 +91,56 @@
         <div class="profile-right">
           <div class="profile-text">
             <div class="name">
-              <h1>Michael Eickmeyer</h1><p class="edu-titles">B.Sc.</p>
+              <h1 data-i18n="bio.name">Michael Eickmeyer</h1><p class="edu-titles">B.Sc.</p>
             </div>
             <div class="bio-subtitle">
-              <p>Master's Student in Visual Computing @</p><a href="https://www.tuwien.at/" target="_blank" rel="noopener noreferrer">TU Wien, Vienna</a>
+              <p data-i18n="bio.subtitle">Master's Student in Visual Computing @</p><a href="https://www.tuwien.at/" target="_blank" rel="noopener noreferrer">TU Wien, Vienna</a>
             </div>
             <div class="divider"></div>
 
             <div class="bio-text">
-              <p>Hi there, name's Michael! Happy to have you here.</p>
+              <p data-i18n="bio.intro">Hi there, name's Michael! Happy to have you here.</p>
               
-              <p>I am a master's student at TU Wien in Vienna, currently majoring in Visual Computing. My primary focus lies in Computer Graphics and Visualization, but I dabble often enough in other areas for it to not really matter.</p>
-              <p>Down below you will find all my current projects, publications, and whatever other stuff I feel like sharing with the world. I am also currently working on an interactive, introductory online textbook & slidedeck about physically-based rendering called <a href="/lightcraft/" class="link-lc">Lightcraft</a>. You can find the current version for completely free, along with my visualization projects, on the right side of the header!</p>
-              <p>Some milestones:</p>
+              <p data-i18n="bio.focus">I am a master's student at TU Wien in Vienna, currently majoring in Visual Computing. My primary focus lies in Computer Graphics and Visualization, but I dabble often enough in other areas for it to not really matter.</p>
+              <p data-i18n-html="bio.below">Down below you will find all my current projects, publications, and whatever other stuff I feel like sharing with the world. I am also currently working on an interactive, introductory online textbook & slidedeck about physically-based rendering called <a href="/lightcraft/" class="link-lc">Lightcraft</a>. You can find the current version for completely free, along with my visualization projects, on the right side of the header!</p>
+              <p data-i18n="bio.milestones">Some milestones:</p>
               <ul>
-                <li>I obtained my B.Sc. in Media Inf. & Visual Computing in 2025 under the supervision of <a href="https://www.cg.tuwien.ac.at/staff/MichaelWimmer" target="_blank" rel="noopener noreferrer">Prof. Michael Wimmer</a>.</li>
-                <li>From 2022 - 2026, I aided the development of the DigiFit4All & Dev0land CS education projects at <a href="https://edulab.tuwien.ac.at/" target="_blank" rel="noopener noreferrer">eduLAB</a>.</li>
-                <li>I ran my first half marathon this year and survived! (wohoo!)</li>
+                <li data-i18n-html="bio.milestone1">I obtained my B.Sc. in Media Inf. & Visual Computing in 2025 under the supervision of <a href="https://www.cg.tuwien.ac.at/staff/MichaelWimmer" target="_blank" rel="noopener noreferrer">Prof. Michael Wimmer</a>.</li>
+                <li data-i18n-html="bio.milestone2">From 2022 - 2026, I aided the development of the DigiFit4All & Dev0land CS education projects at <a href="https://edulab.tuwien.ac.at/" target="_blank" rel="noopener noreferrer">eduLAB</a>.</li>
+                <li data-i18n="bio.milestone3">I ran my first half marathon this year and survived! (wohoo!)</li>
               </ul>
             </div>
           </div>
         </div>
-        
-        
     </div>
 
     <div id="interests">
-      <h2>Research Interests</h2>
+      <h2 data-i18n="sections.interests">Research Interests</h2>
       <div class="divider"></div>
-      <p>Monte-Carlo Rendering, Path Guiding, Real-time Rendering, Denoising, Acceleration Structures, CS Education</p>
+      <p data-i18n="interests.list">Monte-Carlo Rendering, Path Guiding, Real-time Rendering, Denoising, Acceleration Structures, CS Education</p>
     </div>
 
     <div id="projects">
-      <h2>Projects</h2>
+      <h2 data-i18n="sections.projects">Projects</h2>
       <div class="divider"></div>
       <div class="filter">
-        <button type="button" class="filter-btn active" data-filter="current">Current</button>
-        <button type="button" class="filter-btn" data-filter="all">All</button>
+        <button type="button" class="filter-btn active" data-filter="current" data-i18n="projects.filter_current">Current</button>
+        <button type="button" class="filter-btn" data-filter="all" data-i18n="projects.filter_all">All</button>
       </div>
     </div>
 
     <div id="publications">
-      <h2>Publications</h2>
+      <h2 data-i18n="sections.publications">Publications</h2>
       <div class="divider"></div>
     </div>
 
     <div id="other">
-      <h2>Other Work</h2>
+      <h2 data-i18n="sections.other">Other Work</h2>
       <div class="divider"></div>
       <div class="publications-list">
         <a class="publication-card" href="https://www.cg.tuwien.ac.at/research/projects/PathGuideWWTF" target="_blank" rel="noopener noreferrer">
           <div class="publication-thumb">
-            <span class="publication-thumb-badge">Thesis</span>
+            <span class="publication-thumb-badge" data-i18n="otherWork.thesis">Thesis</span>
             <img src="assets/img/other/Klex.svg" alt="Teaser image for B.Sc. thesis" loading="lazy">
           </div>
           <div class="publication-content">
@@ -163,7 +154,7 @@
 
         <a class="publication-card" href="https://mozart.diei.unipg.it/gdcontest/2024/results/" target="_blank" rel="noopener noreferrer">
           <div class="publication-thumb">
-            <span class="publication-thumb-badge">Contest Poster</span>
+            <span class="publication-thumb-badge" data-i18n="otherWork.contestPoster">Contest Poster</span>
             <img src="assets/img/other/gdcontest24.png" alt="Teaser image for the GD Contest submission" loading="lazy">
           </div>
           <div class="publication-content">
@@ -181,16 +172,16 @@
   <footer>
     <div class="footer-content">
       <div class="footer-left">
-        <p class="footer-copy">© 2026 Michael Eickmeyer</p>
+        <p class="footer-copy" data-i18n="footer.copyright">© 2026 Michael Eickmeyer</p>
         <p class="footer-sub">
-          <span>Made with a lot of coffee</span> · <span id="last-synced">Synced via GitHub Actions</span>
+          <span id="coffee-fluff"><span data-i18n="footer.madeWith">Made with</span> <span class="fluff-insert" data-i18n="footer.coffeeFluff">a lot of </span><span data-i18n="footer.coffee">coffee</span> · <span id="last-synced" data-i18n="footer.synced">Synced via GitHub Actions</span>
         </p>
       </div>
 
-      <nav class="footer-nav" aria-label="External and source links">
-        <a href="https://ko-fi.com/akaxiii" target="_blank" rel="noopener noreferrer" title="KoFi">Grab Me a Coffee</a>
-        <a href="https://github.com/gitthirteen/gitthirteen.github.io" target="_blank" rel="noopener noreferrer" title="GitHub Repo">Source</a>
-        <a href="#about" class="footer-top">Back to top ↑</a>
+      <nav class="footer-nav" aria-label="External and source links" data-i18n-attr="aria-label:footer.navLabel">
+        <a href="https://ko-fi.com/akaxiii" target="_blank" rel="noopener noreferrer" title="KoFi" data-i18n="footer.coffeeLink">Grab Me a Coffee</a>
+        <a href="https://github.com/gitthirteen/gitthirteen.github.io" target="_blank" rel="noopener noreferrer" title="GitHub Repo" data-i18n="footer.source">Source</a>
+        <a href="#" class="footer-top" data-i18n="footer.backToTop">Back to top ↑</a>
       </nav>
     </div>
   </footer>

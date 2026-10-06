@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Личная страница | Michael Eickmeyer",
+    "description": "Личная страница Michael Eickmeyer, магистранта направления Visual Computing в TU Wien. Проекты, публикации и научные интересы в области компьютерной графики и визуализации."
+  },
+  "nav": {
+    "about": "Обо мне",
+    "projects": "Проекты",
+    "publications": "Публикации",
+    "visualizations": "Визуализации",
+    "lightcraft": "Lightcraft",
+    "menuLabel": "Переключить меню навигации",
+    "onThisPageLabel": "На этой странице",
+    "redirectsLabel": "Ссылки на другие страницы",
+    "langLabel": "Сменить язык (Текущий: {language})",
+    "langMenuLabel": "Выбрать язык"
+  },
+  "bio": {
+    "name": "Michael Eickmeyer",
+    "subtitle": "Магистрант направления Visual Computing @",
+    "intro": "Привет, меня зовут Michael! Рад, что вы здесь.",
+    "focus": "Я магистрант TU Wien в Вене, специализируюсь на Visual Computing. Моя основная область — компьютерная графика и визуализация, но я достаточно часто пробую себя и в других направлениях, так что это не имеет особого значения.",
+    "below": "Ниже вы найдёте все мои текущие проекты, публикации и прочие материалы, которыми мне хочется поделиться с миром. Кроме того, сейчас я работаю над интерактивным вводным онлайн-учебником и набором слайдов по физически корректному рендерингу под названием <a href=\"/lightcraft/\" class=\"link-lc\">Lightcraft</a>. Актуальную версию можно совершенно бесплатно найти вместе с моими проектами визуализации справа в шапке сайта!",
+    "milestones": "Некоторые достижения:",
+    "milestone1": "В 2025 году я получил степень бакалавра по направлению «Медиаинформатика и Visual Computing» под руководством <a href=\"https://www.cg.tuwien.ac.at/staff/MichaelWimmer\" target=\"_blank\" rel=\"noopener noreferrer\">проф. Michael Wimmer</a>.",
+    "milestone2": "С 2022 по 2026 год я участвовал в разработке образовательных проектов по информатике DigiFit4All и Dev0land в <a href=\"https://edulab.tuwien.ac.at/\" target=\"_blank\" rel=\"noopener noreferrer\">eduLAB</a>.",
+    "milestone3": "В этом году я пробежал свой первый полумарафон и выжил! (ура!)",
+    "profileAlt": "Фотография профиля Michael Eickmeyer"
+  },
+  "sections": {
+    "interests": "Научные интересы",
+    "projects": "Проекты",
+    "publications": "Публикации",
+    "other": "Другие работы"
+  },
+  "interests": {
+    "list": "Рендеринг методом Монте-Карло, path guiding, рендеринг в реальном времени, шумоподавление, структуры ускорения, обучение информатике"
+  },
+  "projects": {
+    "filter_current": "Текущие",
+    "filter_all": "Все",
+    "empty": "Нет проектов для отображения.",
+    "emptyCurrent": "Нет текущих проектов для отображения."
+  },
+  "publications": {
+    "count_one": "Найдена {n} публикация.",
+    "count_other": "Найдено публикаций: {n}.",
+    "teaserAlt": "Изображение-превью для {title}"
+  },
+  "pubTypes": {
+    "conference-paper": "Доклад на конференции",
+    "journal-article": "Статья в журнале",
+    "conference-proceedings": "Сборник трудов",
+    "poster": "Постер",
+    "talk": "Доклад",
+    "presentation": "Доклад",
+    "book-chapter": "Глава книги",
+    "preprint": "Препринт"
+  },
+  "citation": {
+    "in": "В",
+    "proceedings": "В сборнике трудов",
+    "journal": "В статье журнала",
+    "published": "Опубликовано"
+  },
+  "otherWork": {
+    "thesis": "Дипломная работа",
+    "contestPoster": "Конкурсный постер"
+  },
+  "footer": {
+    "copyright": "© 2026 Michael Eickmeyer",
+    "madeWith": "Сделано с",
+    "coffeeFluff": "большим количеством ",
+    "coffee": "кофе",
+    "synced": "Синхронизировано через GitHub Actions",
+    "lastSynced": "Последняя синхронизация: {date}",
+    "coffeeLink": "Угостите меня кофе",
+    "source": "Сорс",
+    "backToTop": "Наверх ↑",
+    "navLabel": "Внешние ссылки и сорс"
+  }
+}
