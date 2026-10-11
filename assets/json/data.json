@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-06T11:31:45.516Z",
+  "lastUpdated": "2026-10-11T04:35:10.178Z",
   "publications": [
     {
       "id": 224904849,
@@ -20,6 +20,18 @@
   ],
   "repositories": [
     {
+      "id": 1401377916,
+      "name": "visualizations",
+      "description": "Accumulator repository for all custom visualization projects.",
+      "url": "https://github.com/GitThirteen/visualizations",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "updatedAt": "2026-10-07T23:20:43Z"
+    },
+    {
       "id": 1401391274,
       "name": "gitthirteen.github.io",
       "description": "Personal landing page.",
@@ -29,7 +41,7 @@
       "forks": 0,
       "language": "CSS",
       "topics": [],
-      "updatedAt": "2026-10-06T11:31:10Z"
+      "updatedAt": "2026-10-06T18:38:16Z"
     },
     {
       "id": 1127501655,
@@ -74,18 +86,6 @@
         "vulkan"
       ],
       "updatedAt": "2026-07-15T12:30:36Z"
-    },
-    {
-      "id": 1401377916,
-      "name": "visualizations",
-      "description": "Accumulator repository for all custom visualization projects.",
-      "url": "https://github.com/GitThirteen/visualizations",
-      "homepage": null,
-      "stars": 0,
-      "forks": 0,
-      "language": "JavaScript",
-      "topics": [],
-      "updatedAt": "2026-10-02T08:31:59Z"
     },
     {
       "id": 1231269796,
