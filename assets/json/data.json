@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-11T04:35:10.178Z",
+  "lastUpdated": "2026-10-18T03:30:16.909Z",
   "publications": [
     {
       "id": 224904849,
@@ -20,16 +20,45 @@
   ],
   "repositories": [
     {
+      "id": 1421275159,
+      "name": "fmbomt",
+      "description": "A utility web-tool for visualizing and experimenting with the fitting of 1D and 2D distributions.",
+      "url": "https://github.com/GitThirteen/fmbomt",
+      "homepage": "gitthirteen.github.io/fmbomt",
+      "stars": 0,
+      "forks": 0,
+      "language": "CSS",
+      "topics": [
+        "beta-distribution",
+        "d3",
+        "distributions",
+        "gaussian-mixture-models",
+        "metalog",
+        "utility",
+        "visualization",
+        "von-mises-fisher"
+      ],
+      "updatedAt": "2026-10-15T22:56:05Z"
+    },
+    {
       "id": 1401377916,
       "name": "visualizations",
       "description": "Accumulator repository for all custom visualization projects.",
       "url": "https://github.com/GitThirteen/visualizations",
-      "homepage": null,
+      "homepage": "https://gitthirteen.github.io/visualizations/",
       "stars": 0,
       "forks": 0,
       "language": "JavaScript",
-      "topics": [],
-      "updatedAt": "2026-10-07T23:20:43Z"
+      "topics": [
+        "accumulator",
+        "infovis",
+        "path-tracing",
+        "rendering",
+        "visualizations",
+        "volume-rendering",
+        "volvis"
+      ],
+      "updatedAt": "2026-10-12T11:50:14Z"
     },
     {
       "id": 1401391274,
@@ -41,7 +70,7 @@
       "forks": 0,
       "language": "CSS",
       "topics": [],
-      "updatedAt": "2026-10-06T18:38:16Z"
+      "updatedAt": "2026-10-11T04:35:11Z"
     },
     {
       "id": 1127501655,
