@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T03:30:16.909Z",
+  "lastUpdated": "2026-10-25T03:39:01.042Z",
   "publications": [
     {
       "id": 224904849,
@@ -27,7 +27,7 @@
       "homepage": "gitthirteen.github.io/fmbomt",
       "stars": 0,
       "forks": 0,
-      "language": "CSS",
+      "language": "TypeScript",
       "topics": [
         "beta-distribution",
         "d3",
@@ -38,7 +38,19 @@
         "visualization",
         "von-mises-fisher"
       ],
-      "updatedAt": "2026-10-15T22:56:05Z"
+      "updatedAt": "2026-10-22T23:26:22Z"
+    },
+    {
+      "id": 1401391274,
+      "name": "gitthirteen.github.io",
+      "description": "Personal landing page.",
+      "url": "https://github.com/GitThirteen/gitthirteen.github.io",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "CSS",
+      "topics": [],
+      "updatedAt": "2026-10-18T03:30:17Z"
     },
     {
       "id": 1401377916,
@@ -59,18 +71,6 @@
         "volvis"
       ],
       "updatedAt": "2026-10-12T11:50:14Z"
-    },
-    {
-      "id": 1401391274,
-      "name": "gitthirteen.github.io",
-      "description": "Personal landing page.",
-      "url": "https://github.com/GitThirteen/gitthirteen.github.io",
-      "homepage": null,
-      "stars": 0,
-      "forks": 0,
-      "language": "CSS",
-      "topics": [],
-      "updatedAt": "2026-10-11T04:35:11Z"
     },
     {
       "id": 1127501655,
